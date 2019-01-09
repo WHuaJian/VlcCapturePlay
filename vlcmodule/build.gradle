@@ -1,0 +1,46 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion 26
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 26
+    }
+    buildTypes {
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['jniLibs']
+            res.srcDirs = ['src/main/res', 'src/main/res/values-en']
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+publish {
+    userOrg = 'whj'
+    groupId = 'com.whj.vlc'
+    artifactId = 'VlcCapturePlayer'
+    repoName = 'Maven'
+    publishVersion = '1.0.0'
+    desc = 'vlc player'
+    licences = ['Apache-2.0']
+
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+}

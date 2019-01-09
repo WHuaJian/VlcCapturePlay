@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="Theme.VLC.Fullscreen" parent="android:Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@color/black</item>
+    </style>
+
+</resources>
