@@ -21,6 +21,7 @@ allprojects {
         maven { url "https://jitpack.io" }
     }
 
+    //加上这些
     tasks.withType(Javadoc) {
         options {
             encoding "UTF-8"
